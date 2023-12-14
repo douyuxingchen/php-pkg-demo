@@ -1,5 +1,5 @@
 <?php
-namespace Douyuxingchen\PhpPkgDemo;
+namespace Douyuxingchen\PhpPkgDemo\Example;
 
 class Example
 {
