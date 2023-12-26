@@ -14,12 +14,12 @@ class Sms2Test extends TestCase
 
         Config::shouldReceive('get')
             ->once()
-            ->with('aliyun.appKey')
+            ->with('php_pkg.appKey')
             ->andReturn(lib_env('SMS_APP_KEY'));
 
         Config::shouldReceive('get')
             ->once()
-            ->with('aliyun.appSecret')
+            ->with('php_pkg.appSecret')
             ->andReturn(lib_env('SMS_APP_SECRET'));
     }
 

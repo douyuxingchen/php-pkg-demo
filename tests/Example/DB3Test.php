@@ -1,15 +1,15 @@
 <?php
-namespace Example;
+namespace Tests\Example;
 
-use Douyuxingchen\PhpPkgDemo\Example\Stateful\DB3\DBFacade;
-use PHPUnit\Framework\TestCase;
+use Douyuxingchen\PhpPkgDemo\Example\Stateful\DB3\DB;
+use Tests\AbstractTestCase;
 
-class DB3Test extends TestCase
+class DB3Test extends AbstractTestCase
 {
-    // ./vendor/bin/phpunit --filter testDB ./tests/Example/DBFacadeTest.php
+    // ./vendor/bin/phpunit --filter testDB ./tests/Example/DB3Test.php
     public function testDB()
     {
-        $res = DBFacade::table('users')->get();
+        $res = DB::table('users')->get();
         var_dump($res);
         $this->assertNotNull($res);
     }

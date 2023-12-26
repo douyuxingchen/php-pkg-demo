@@ -10,8 +10,8 @@ class Sms2
 
     public function __construct()
     {
-        $this->appKey = Config::get('aliyun.appKey');
-        $this->appSecret = Config::get('aliyun.appSecret');
+        $this->appKey = Config::get('php_pkg.appKey');
+        $this->appSecret = Config::get('php_pkg.appSecret');
     }
 
     public function setTemplate(string $template)
