@@ -9,31 +9,38 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false">
-    <!--测试套件：非常多的测试用例放在一起即可成为测试套件，执行时会扫描包含的所有 *Test.php文件-->
+
+    <!--测试套件：放在一起即可成为测试套件，执行时会扫描包含的所有 *Test.php文件-->
     <testsuites>
         <testsuite name="Unit">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
+
+    <!-- 配置代码覆盖率测试目录 -->
     <filter>
-        <!--这里配置了白名单，只有这里边的代码会被统计覆盖率-->
-<!--        <whitelist processUncoveredFilesFromWhitelist="true">-->
-<!--            <directory suffix=".php">./src</directory>-->
-<!--        </whitelist>-->
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+        </whitelist>
     </filter>
-    <!--这里配置了PHP的环境变量-->
+
+    <!-- 环境变量配置 -->
     <php>
-        <server name="APP_ENV" value="dev"/>
-        <server name="BCRYPT_ROUNDS" value="4"/>
-        <server name="CACHE_DRIVER" value="array"/>
-        <server name="MAIL_DRIVER" value="array"/>
-        <server name="QUEUE_CONNECTION" value="sync"/>
-        <server name="SESSION_DRIVER" value="array"/>
+        <env name="APP_ENV" value="local"/>
+        <env name="SDK" value="true"/>
+        <ini name="ROOT_TESTS" value="./tests"/>
+        <ini name="ROOT_FEATURE" value="./tests/Feature"/>
+        <server name="HTTP_HOST" value="localhost"/>
+        <post name="foo" value="bar"/>
+        <get name="foo" value="bar"/>
+        <request name="foo" value="bar"/>
     </php>
+
     <!--这里是日志记录，把覆盖率信息保存到 ./tests/codeCoverage-->
-<!--    <logging>-->
-<!--        <log type="coverage-html" target="./tests/codeCoverage"/>-->
-<!--    </logging>-->
+    <logging>
+        <log type="coverage-clover" target="tests/codeCoverage/coverage.xml"/>
+        <log type="coverage-html" target="tests/codeCoverage/testdox.html"/>
+    </logging>
 
     <!-- 添加以下节点，用于配置不生成测试报告 -->
     <listeners>

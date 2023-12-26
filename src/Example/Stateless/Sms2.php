@@ -1,15 +1,17 @@
 <?php
 namespace Douyuxingchen\PhpPkgDemo\Example\Stateless;
 
-class Sms
+use Illuminate\Support\Facades\Config;
+
+class Sms2
 {
     private $appKey;
     private $appSecret;
 
-    public function __construct(string $appKey, $appSecret)
+    public function __construct()
     {
-        $this->appKey = $appKey;
-        $this->appSecret = $appSecret;
+        $this->appKey = Config::get('aliyun.appKey');
+        $this->appSecret = Config::get('aliyun.appSecret');
     }
 
     public function setTemplate(string $template)
