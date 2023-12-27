@@ -8,5 +8,5 @@ return [
     'mysql' => 'mysql',
 
     // redis连接驱动
-    'redis' => 'default',
+    'redis' => 'cache',
 ];

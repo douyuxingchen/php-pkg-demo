@@ -24,5 +24,4 @@ class Sms1
         echo '短信发送成功';
         return true;
     }
-
 }

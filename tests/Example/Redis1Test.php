@@ -5,9 +5,7 @@ use Douyuxingchen\PhpPkgDemo\Example\Stateful\Redis\Redis1;
 use Illuminate\Redis\RedisManager;
 use Tests\AbstractTestCase;
 
-/**
- * 传递连接驱动
- */
+// 上层业务传递连接驱动
 class Redis1Test extends AbstractTestCase
 {
     private $redis;
