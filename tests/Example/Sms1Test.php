@@ -3,8 +3,9 @@ namespace Tests\Example;
 
 use Douyuxingchen\PhpPkgDemo\Example\Stateless\Sms1;
 use PHPUnit\Framework\TestCase;
+use Tests\AbstractTestCase;
 
-class Sms1Test extends TestCase
+class Sms1Test extends AbstractTestCase
 {
     // ./vendor/bin/phpunit --filter testSend ./tests/Example/Sms1Test.php
     public function testSend()

@@ -5,8 +5,9 @@ use Douyuxingchen\PhpPkgDemo\Example\Stateless\Sms2;
 use Illuminate\Support\Facades\Config;
 use PHPUnit\Framework\TestCase;
 use Mockery;
+use Tests\AbstractTestCase;
 
-class Sms2Test extends TestCase
+class Sms2Test extends AbstractTestCase
 {
     public function setUp(): void
     {

@@ -1,9 +1,10 @@
 <?php
-namespace Example;
+namespace Tests\Example;
 
 use PHPUnit\Framework\TestCase;
+use Tests\AbstractTestCase;
 
-class VariableTest extends TestCase
+class VariableTest extends AbstractTestCase
 {
     // ./vendor/bin/phpunit --filter testVar ./tests/Example/VariableTest.php
     public function testVar()
