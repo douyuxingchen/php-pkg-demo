@@ -12,8 +12,14 @@
 
     <!--测试套件：放在一起即可成为测试套件，执行时会扫描包含的所有 *Test.php文件-->
     <testsuites>
+        <testsuite name="Feature">
+            <directory suffix="Test.php">./tests/Feature</directory>
+        </testsuite>
         <testsuite name="Unit">
-            <directory suffix="Test.php">./tests</directory>
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Example">
+            <directory suffix="Test.php">./tests/Example</directory>
         </testsuite>
     </testsuites>
 
@@ -30,6 +36,7 @@
         <env name="SDK" value="true"/>
         <ini name="ROOT_TESTS" value="./tests"/>
         <ini name="ROOT_FEATURE" value="./tests/Feature"/>
+        <ini name="pcov.enabled" value="1"/>
         <server name="HTTP_HOST" value="localhost"/>
         <post name="foo" value="bar"/>
         <get name="foo" value="bar"/>
@@ -38,8 +45,8 @@
 
     <!--这里是日志记录，把覆盖率信息保存到 ./tests/codeCoverage-->
     <logging>
-        <log type="coverage-clover" target="tests/codeCoverage/coverage.xml"/>
-        <log type="coverage-html" target="tests/codeCoverage/testdox.html"/>
+        <log type="coverage-clover" target="tests/codeCoverage/coverage.xml" lowUpperBound="35" highLowerBound="70"/>
+        <log type="coverage-html" target="tests/codeCoverage/coverage.html" lowUpperBound="35" highLowerBound="70"/>
     </logging>
 
     <!-- 添加以下节点，用于配置不生成测试报告 -->

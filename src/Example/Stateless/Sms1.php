@@ -1,7 +1,7 @@
 <?php
 namespace Douyuxingchen\PhpPkgDemo\Example\Stateless;
 
-class Sms
+class Sms1
 {
     private $appKey;
     private $appSecret;

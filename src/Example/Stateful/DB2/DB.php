@@ -1,5 +1,5 @@
 <?php
-namespace Douyuxingchen\PhpPkgDemo\Example\Stateful\DB3;
+namespace Douyuxingchen\PhpPkgDemo\Example\Stateful\DB2;
 
 use Illuminate\Database\Connectors\ConnectionFactory;
 use Illuminate\Database\Query\Builder;
@@ -10,7 +10,7 @@ class DB extends BaseDB
 {
     protected static $connection;
 
-    public static function table($table)
+    public static function table($table): Builder
     {
         $builder = new Builder(static::getConnection());
         return $builder->from($table);
