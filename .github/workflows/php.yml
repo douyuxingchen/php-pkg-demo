@@ -12,7 +12,13 @@ permissions:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    name: PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ ubuntu-latest, windows-latest, macos-latest ]
+        php-versions: [ '7.3' ]
 
     steps:
     - uses: actions/checkout@v3
@@ -20,7 +26,11 @@ jobs:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '7.3'
+        php-version: ${{ matrix.php-versions }}
+        ini-values: post_max_size=256M, max_execution_time=180
+        extensions: mbstring,dom,fileinfo,redis
+        tools: composer:v2,php-cs-fixer,phpunit
+        coverage: xdebug
 
     - name: PHP syntax check
       run: sh scripts/php_lint.sh ./
