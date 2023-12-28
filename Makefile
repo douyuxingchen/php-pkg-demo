@@ -2,8 +2,8 @@
 install: ## Composer依赖安装
 	docker run -it --rm -v "$(pwd)":/www jefferyjob/douyu-php composer install
 
-.PHONY:test
-test: ## 单元测试
+.PHONY:tests
+tests: ## 单元测试
 	./vendor/bin/phpunit --colors
 
 .PHONY:help

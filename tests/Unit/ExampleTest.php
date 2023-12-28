@@ -1,9 +1,9 @@
 <?php
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use Tests\AbstractTestCase;
 
-class ExampleTest extends TestCase
+class ExampleTest extends AbstractTestCase
 {
     // ./vendor/bin/phpunit --filter testExample ./tests/Unit/ExampleTest.php
     public function testExample()
