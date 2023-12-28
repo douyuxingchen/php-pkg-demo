@@ -17,8 +17,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        operating-system: [ ubuntu-latest, windows-latest, macos-latest, centos-latest ]
-        php-versions: ['7.3']
+        operating-system: [ ubuntu-latest, windows-latest, macos-latest ]
+        php-versions: ['7.2','7.3']
 
     steps:
     - uses: actions/checkout@v3
